@@ -6,11 +6,17 @@
  #sigil{font-size:5rem;margin-right:1rem;}
  #score{font-size:4rem;}
 </style>
+
 <div id="sigil">△│</div><div id="score">…</div>
+
 <script>
-fetch(PrincessJessCoder.github.io)
- .then(r=>r.json())
- .then(d=>score.textContent=d.score)
- .catch(()=>score.textContent='—');
+const scoreElem = document.getElementById('score');
+
+
+fetch('https://script.google.com/macros/s/AKfycbyRWVIbwgJmO3-v2jgspGPu_e5JiUyBbSQXEmETRRWEcvYzV6wWVw-LKA4jYOpE1kL5YA/exec')
+  .then(r => r.json())
+  .then(d => scoreElem.textContent = d.score)
+  .catch(() => scoreElem.textContent = '—');
+
 setInterval(()=>location.reload(),60000);
 </script>
