@@ -1,2 +1,16 @@
-<!doctype html><meta charset="utf-8">
-<h1 style="font-family:sans-serif;text-align:center;">Obedience score loading…</h1>
+<!doctype html>
+<meta charset="utf-8">
+<style>
+ body{display:flex;height:100vh;justify-content:center;align-items:center;
+      background:#111;color:#eee;font-family:sans-serif}
+ #sigil{font-size:5rem;margin-right:1rem;}
+ #score{font-size:4rem;}
+</style>
+<div id="sigil">△│</div><div id="score">…</div>
+<script>
+fetch('PASTE_YOUR_API_URL_HERE')
+ .then(r=>r.json())
+ .then(d=>score.textContent=d.score)
+ .catch(()=>score.textContent='—');
+setInterval(()=>location.reload(),60000);
+</script>
